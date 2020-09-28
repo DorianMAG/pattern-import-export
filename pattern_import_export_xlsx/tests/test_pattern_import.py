@@ -20,7 +20,7 @@ DUMP_OUTPUT = False
 PATH = path.dirname(__file__) + "/fixtures/"
 
 
-class TestPatternImport(SavepointCase):
+class TestPatternImportExcel(SavepointCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
