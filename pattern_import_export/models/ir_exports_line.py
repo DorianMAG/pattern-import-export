@@ -143,8 +143,10 @@ class IrExportsLine(models.Model):
                 )
                 related_comodel = self.env[model]._fields[field]._related_comodel_name
                 if related_comodel:
-                    comodel = self.env["ir.model"].search(
-                        [("model", "=", related_comodel)], limit=1
+                    comodel = (
+                        self.env["ir.model"]
+                        .sudo()
+                        .search([("model", "=", related_comodel)], limit=1)
                     )
                     export_line.related_model_id = comodel.id
                     export_line.level = level
@@ -155,8 +157,12 @@ class IrExportsLine(models.Model):
                 else:
                     last_field = field
                     last_model = model
-                export_line.last_field_id = self.env["ir.model.fields"].search(
-                    [("name", "=", last_field), ("model_id.model", "=", last_model)]
+                export_line.last_field_id = (
+                    self.env["ir.model.fields"]
+                    .sudo()
+                    .search(
+                        [("name", "=", last_field), ("model_id.model", "=", last_model)]
+                    )
                 )
 
     def _build_header(self, level, use_description):
