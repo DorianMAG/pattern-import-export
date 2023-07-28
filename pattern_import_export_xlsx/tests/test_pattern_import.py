@@ -11,7 +11,7 @@ from os import path
 import openpyxl
 from mock import Mock
 
-from odoo.tests import SavepointCase
+from odoo.tests import TransactionCase
 from odoo.tools import mute_logger
 
 # helper to dump the result of the import into an excel file
@@ -21,7 +21,7 @@ DUMP_OUTPUT = False
 PATH = path.dirname(__file__) + "/fixtures/"
 
 
-class TestPatternImportExcel(SavepointCase):
+class TestPatternImportExcel(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()

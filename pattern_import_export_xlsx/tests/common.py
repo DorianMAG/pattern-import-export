@@ -8,12 +8,12 @@ from io import BytesIO
 
 import openpyxl
 
-from odoo.tests.common import SavepointCase
+from odoo.tests.common import TransactionCase
 
 from odoo.addons.pattern_import_export.tests.common import PatternCommon
 
 
-class CommonPatternExportExcel(PatternCommon, SavepointCase):
+class CommonPatternExportExcel(PatternCommon, TransactionCase):
     @classmethod
     def _set_up_tab_names(cls):
         for el in ("ignore_one", "countries_1", "countries_2"):
