@@ -7,7 +7,7 @@ import csv
 import io
 from os import path
 
-from odoo.tests.common import SavepointCase
+from odoo.tests.common import TransactionCase
 
 # pylint: disable=odoo-addons-relative-import
 from odoo.addons.pattern_import_export.tests.common import PatternCommon
@@ -17,7 +17,7 @@ PATH = path.dirname(__file__)
 CELL_VALUE_EMPTY = ""
 
 
-class ExportPatternCsvCommon(PatternCommon, SavepointCase):
+class ExportPatternCsvCommon(PatternCommon, TransactionCase):
     def _split_csv_str(self, astring, export_id):
         result = []
         virtual_file = io.StringIO(astring)
