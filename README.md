@@ -1,8 +1,8 @@
 
 <!-- /!\ Non OCA Context : Set here the badge of your runbot / runboat instance. -->
-[![Pre-commit Status](https://github.com/shopinvader/pattern-import-export/actions/workflows/pre-commit.yml/badge.svg?branch=14.0)](https://github.com/shopinvader/pattern-import-export/actions/workflows/pre-commit.yml?query=branch%3A14.0)
-[![Build Status](https://github.com/shopinvader/pattern-import-export/actions/workflows/test.yml/badge.svg?branch=14.0)](https://github.com/shopinvader/pattern-import-export/actions/workflows/test.yml?query=branch%3A14.0)
-[![codecov](https://codecov.io/gh/shopinvader/pattern-import-export/branch/14.0/graph/badge.svg)](https://codecov.io/gh/shopinvader/pattern-import-export)
+[![Pre-commit Status](https://github.com/shopinvader/pattern-import-export/actions/workflows/pre-commit.yml/badge.svg?branch=16.0)](https://github.com/shopinvader/pattern-import-export/actions/workflows/pre-commit.yml?query=branch%3A16.0)
+[![Build Status](https://github.com/shopinvader/pattern-import-export/actions/workflows/test.yml/badge.svg?branch=16.0)](https://github.com/shopinvader/pattern-import-export/actions/workflows/test.yml?query=branch%3A16.0)
+[![codecov](https://codecov.io/gh/shopinvader/pattern-import-export/branch/16.0/graph/badge.svg)](https://codecov.io/gh/shopinvader/pattern-import-export)
 <!-- /!\ Non OCA Context : Set here the badge of your translation instance. -->
 
 <!-- /!\ do not modify above this line -->
@@ -21,11 +21,11 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[pattern_import_export](pattern_import_export/) | 14.0.2.5.1 |  | Pattern for import or export
-[pattern_import_export_csv](pattern_import_export_csv/) | 14.0.1.1.0 |  | Pattern for import or export from to CSV files
-[pattern_import_export_custom_header](pattern_import_export_custom_header/) | 14.0.1.0.1 |  | Allow to use custom headers names in export files
-[pattern_import_export_synchronize](pattern_import_export_synchronize/) | 14.0.1.0.0 | [![kevinkhao](https://github.com/kevinkhao.png?size=30px)](https://github.com/kevinkhao) [![sebastienbeau](https://github.com/sebastienbeau.png?size=30px)](https://github.com/sebastienbeau) | Attachment Synchronize using patterns
-[pattern_import_export_xlsx](pattern_import_export_xlsx/) | 14.0.2.1.0 |  | Pattern for import or export from to XLSX files
+[pattern_import_export](pattern_import_export/) | 16.0.1.0.0 |  | Pattern for import or export
+[pattern_import_export_csv](pattern_import_export_csv/) | 16.0.1.0.0 |  | Pattern for import or export from to CSV files
+[pattern_import_export_custom_header](pattern_import_export_custom_header/) | 16.0.1.0.0 |  | Allow to use custom headers names in export files
+[pattern_import_export_synchronize](pattern_import_export_synchronize/) | 16.0.1.0.0 | [![kevinkhao](https://github.com/kevinkhao.png?size=30px)](https://github.com/kevinkhao) [![sebastienbeau](https://github.com/sebastienbeau.png?size=30px)](https://github.com/sebastienbeau) | Attachment Synchronize using patterns
+[pattern_import_export_xlsx](pattern_import_export_xlsx/) | 16.0.1.0.0 |  | Pattern for import or export from to XLSX files
 
 [//]: # (end addons)
 
