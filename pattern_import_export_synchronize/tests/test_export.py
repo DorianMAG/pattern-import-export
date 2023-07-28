@@ -3,10 +3,10 @@
 # pylint: disable=missing-manifest-dependency
 import mock
 
-from odoo.tests import SavepointCase
+from odoo.tests import TransactionCase
 
 
-class TestExport(SavepointCase):
+class TestExport(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
