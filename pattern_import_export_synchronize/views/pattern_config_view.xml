@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+<record id="ir_exports_form_view" model="ir.ui.view">
+    <field name="model">pattern.config</field>
+    <field name="inherit_id" ref="pattern_import_export.pattern_config_form_view" />
+    <field name="arch" type="xml">
+        <notebook position="inside">
+            <page name="auto_import" string="Automatic Import">
+                <group name="auto_import" colspan="4" col="2">
+                    <field
+                            name="import_task_ids"
+                            nolabel="1"
+                            context="{
+                                'show_button': True,
+                                'default_file_type': 'import_pattern',
+                                'default_method_type': 'import',
+                                'from_pattern': True,
+                            }"
+                            options='{"always_reload": True}'
+                        />
+                </group>
+            </page>
+            <page name="auto_export" string="Automatic Export">
+                <group name="auto_export" colspan="4" col="2">
+                    <field name="export_task_ids" nolabel="1" />
+                </group>
+            </page>
+        </notebook>
+    </field>
+</record>
+
+</odoo>
