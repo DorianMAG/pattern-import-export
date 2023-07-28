@@ -21,11 +21,11 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[pattern_import_export](pattern_import_export/) | 16.0.0.1.0 |  | Pattern for import or export
-[pattern_import_export_csv](pattern_import_export_csv/) | 16.0.0.1.0 |  | Pattern for import or export from to CSV files
-[pattern_import_export_custom_header](pattern_import_export_custom_header/) | 16.0.0.1.0 |  | Allow to use custom headers names in export files
-[pattern_import_export_synchronize](pattern_import_export_synchronize/) | 16.0.0.1.0 | [![kevinkhao](https://github.com/kevinkhao.png?size=30px)](https://github.com/kevinkhao) [![sebastienbeau](https://github.com/sebastienbeau.png?size=30px)](https://github.com/sebastienbeau) | Attachment Synchronize using patterns
-[pattern_import_export_xlsx](pattern_import_export_xlsx/) | 16.0.0.1.0 |  | Pattern for import or export from to XLSX files
+[pattern_import_export](pattern_import_export/) | 16.0.1.0.0 |  | Pattern for import or export
+[pattern_import_export_csv](pattern_import_export_csv/) | 16.0.1.0.0 |  | Pattern for import or export from to CSV files
+[pattern_import_export_custom_header](pattern_import_export_custom_header/) | 16.0.1.0.0 |  | Allow to use custom headers names in export files
+[pattern_import_export_synchronize](pattern_import_export_synchronize/) | 16.0.1.0.0 | [![kevinkhao](https://github.com/kevinkhao.png?size=30px)](https://github.com/kevinkhao) [![sebastienbeau](https://github.com/sebastienbeau.png?size=30px)](https://github.com/sebastienbeau) | Attachment Synchronize using patterns
+[pattern_import_export_xlsx](pattern_import_export_xlsx/) | 16.0.1.0.0 |  | Pattern for import or export from to XLSX files
 
 [//]: # (end addons)
 

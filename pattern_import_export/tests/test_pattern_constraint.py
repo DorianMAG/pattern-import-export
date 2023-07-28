@@ -1,10 +1,10 @@
 # Copyright 2020 Akretion France (http://www.akretion.com)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from odoo import exceptions
-from odoo.tests.common import SavepointCase
+from odoo.tests.common import TransactionCase
 
 
-class TestPatternConstraint(SavepointCase):
+class TestPatternConstraint(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()

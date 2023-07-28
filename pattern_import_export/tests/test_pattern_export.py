@@ -1,6 +1,6 @@
 # Copyright 2020 Akretion France (http://www.akretion.com)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from odoo.tests.common import SavepointCase
+from odoo.tests.common import TransactionCase
 
 from .common import PatternCommon
 
@@ -379,7 +379,7 @@ class PatternCaseExport:
             self.assertIn("country_id#key|code", result)
 
 
-class PatternTestExport(PatternCommon, SavepointCase, PatternCaseExport):
+class PatternTestExport(PatternCommon, TransactionCase, PatternCaseExport):
     def _get_header(self, pattern_config, use_description=False):
         return pattern_config._get_header(use_description=use_description)
 

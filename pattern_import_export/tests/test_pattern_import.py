@@ -2,13 +2,13 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from uuid import uuid4
 
-from odoo.tests.common import SavepointCase
+from odoo.tests.common import TransactionCase
 from odoo.tools import mute_logger
 
 from .common import PatternCommon
 
 
-class TestPatternImport(PatternCommon, SavepointCase):
+class TestPatternImport(PatternCommon, TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -45,7 +45,9 @@ class TestPatternImport(PatternCommon, SavepointCase):
         @return:
         """
         unique_name = str(uuid4())
-        data = [{"id": self.user3.get_xml_id().get(self.user3.id), "name": unique_name}]
+        data = [
+            {"id": self.user3.get_external_id().get(self.user3.id), "name": unique_name}
+        ]
         pattern_file = self.create_pattern(self.pattern_config_m2m, "import", data)
         records = self.run_pattern_file(pattern_file)
         self.assertFalse(records)
@@ -131,11 +133,15 @@ class TestPatternImport(PatternCommon, SavepointCase):
         partner3_name = str(uuid4())
         data = [
             {
-                "id": self.partner_1.get_xml_id().get(self.partner_1.id),
+                "id": self.partner_1.get_external_id().get(self.partner_1.id),
                 "name": unique_name,
-                "child_ids|1|id": self.partner_2.get_xml_id().get(self.partner_2.id),
+                "child_ids|1|id": self.partner_2.get_external_id().get(
+                    self.partner_2.id
+                ),
                 "child_ids|1|name": partner2_name,
-                "child_ids|2|id": self.partner_3.get_xml_id().get(self.partner_3.id),
+                "child_ids|2|id": self.partner_3.get_external_id().get(
+                    self.partner_3.id
+                ),
                 "child_ids|2|name": partner3_name,
             }
         ]
@@ -163,38 +169,44 @@ class TestPatternImport(PatternCommon, SavepointCase):
         user2_name = str(uuid4())
         data = [
             {
-                "id": self.partner_1.get_xml_id().get(self.partner_1.id),
+                "id": self.partner_1.get_external_id().get(self.partner_1.id),
                 "name": unique_name,
-                "category_id|1|id": self.partner_cat1.get_xml_id().get(
+                "category_id|1|id": self.partner_cat1.get_external_id().get(
                     self.partner_cat1.id
                 ),
-                "category_id|2|id": self.partner_cat2.get_xml_id().get(
+                "category_id|2|id": self.partner_cat2.get_external_id().get(
                     self.partner_cat2.id
                 ),
-                "country_id|id": self.country_be.get_xml_id().get(self.country_be.id),
-                "child_ids|1|id": self.partner_2.get_xml_id().get(self.partner_2.id),
-                "child_ids|1|name": user1_name,
-                "child_ids|1|industry_id|id": self.industry1.get_xml_id().get(
-                    self.industry1.id
-                ),
-                "child_ids|1|country_id|id": self.country_be.get_xml_id().get(
+                "country_id|id": self.country_be.get_external_id().get(
                     self.country_be.id
                 ),
-                "child_ids|1|category_id|1|id": self.partner_cat1.get_xml_id().get(
+                "child_ids|1|id": self.partner_2.get_external_id().get(
+                    self.partner_2.id
+                ),
+                "child_ids|1|name": user1_name,
+                "child_ids|1|industry_id|id": self.industry1.get_external_id().get(
+                    self.industry1.id
+                ),
+                "child_ids|1|country_id|id": self.country_be.get_external_id().get(
+                    self.country_be.id
+                ),
+                "child_ids|1|category_id|1|id": self.partner_cat1.get_external_id().get(
                     self.partner_cat1.id
                 ),
-                "child_ids|1|category_id|2|id": self.partner_cat2.get_xml_id().get(
+                "child_ids|1|category_id|2|id": self.partner_cat2.get_external_id().get(
                     self.partner_cat2.id
                 ),
-                "child_ids|2|id": self.partner_3.get_xml_id().get(self.partner_3.id),
+                "child_ids|2|id": self.partner_3.get_external_id().get(
+                    self.partner_3.id
+                ),
                 "child_ids|2|name": user2_name,
-                "child_ids|2|industry_id|id": self.industry2.get_xml_id().get(
+                "child_ids|2|industry_id|id": self.industry2.get_external_id().get(
                     self.industry2.id
                 ),
-                "child_ids|2|country_id|id": self.country_us.get_xml_id().get(
+                "child_ids|2|country_id|id": self.country_us.get_external_id().get(
                     self.country_us.id
                 ),
-                "child_ids|2|category_id|1|id": self.partner_cat2.get_xml_id().get(
+                "child_ids|2|category_id|1|id": self.partner_cat2.get_external_id().get(
                     self.partner_cat2.id
                 ),
             }
