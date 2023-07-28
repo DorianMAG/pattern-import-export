@@ -2,12 +2,12 @@
 # @author Kévin Roche <kevin.roche@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.tests.common import SavepointCase
+from odoo.tests.common import TransactionCase
 
 from odoo.addons.pattern_import_export.tests.common import PatternCommon
 
 
-class TestCustomHeader(PatternCommon, SavepointCase):
+class TestCustomHeader(PatternCommon, TransactionCase):
     def _get_data(self, pattern_config, records):
         return pattern_config._get_data_to_export(records)
 
