@@ -19,12 +19,17 @@ class IrActions(models.Model):
             "pattern_import_export.action_export_with_pattern",
             "pattern_import_export.import_pattern_wizard_action",
         ]
+        action_list = []
         # the get_bindings method is cached by the orm this meant
         # when we append the action in res["action"] it's added in the dict
         # and as the dict is mutuable the value is cached is updated
         # so we need to be careful to not add it again and again
         if self.env.user.has_group("pattern_import_export.group_pattern_user"):
             for xml_id in xml_ids:
-                if xml_id not in [act.get("xml_id") for act in res["action"]]:
-                    res["action"].append(self.env.ref(xml_id).sudo().read()[0])
+                action = self.env.ref(xml_id).sudo().read()[0]
+                action_list.append(action)
+            if "action" in res:
+                res["action"].extend(action_list)
+            else:
+                res["action"] = action_list
         return res
